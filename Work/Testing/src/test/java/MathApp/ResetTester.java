@@ -6,13 +6,13 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.mockito.stubbing.Answer;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.reset;
 
 @ExtendWith(MockitoExtension.class)
-public class CallbackTester {
+public class ResetTester {
     private static MathApplication mathApplication;
     private static CalculatorService calcService;
 
@@ -23,21 +23,18 @@ public class CallbackTester {
         mathApplication.setCalculatorService(calcService);
     }
 
+
     @Test
-    @DisplayName("Testing the mockito callback")
-    public void TestAdd() {
-        // add the behavior using generic Answer
-        when(calcService.add(20.0, 10.0)).thenAnswer((Answer<Double>) invocation -> {
-            // get the arguments passed to mock
-            Object[] args = invocation.getArguments();
+    @DisplayName("Testing asserting after reset")
+    public void testAdd() {
+        when(calcService.add(20.0, 10.0)).thenReturn(30.0);
 
-            // get the mock
-            Object mock   = invocation.getMock();
+        Assertions.assertEquals(mathApplication.add(20.0, 10.0), 30.0);
 
-            return 30.0;
-        });
+        // reset the mock and assert again
+        reset(calcService);
 
-        // test the add functionality
         Assertions.assertEquals(mathApplication.add(20.0, 10.0), 30.0);
     }
+
 }

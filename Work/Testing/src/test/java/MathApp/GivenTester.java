@@ -6,13 +6,12 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.mockito.stubbing.Answer;
 
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.BDDMockito.given;
 
 @ExtendWith(MockitoExtension.class)
-public class CallbackTester {
+public class GivenTester {
     private static MathApplication mathApplication;
     private static CalculatorService calcService;
 
@@ -24,20 +23,15 @@ public class CallbackTester {
     }
 
     @Test
-    @DisplayName("Testing the mockito callback")
-    public void TestAdd() {
-        // add the behavior using generic Answer
-        when(calcService.add(20.0, 10.0)).thenAnswer((Answer<Double>) invocation -> {
-            // get the arguments passed to mock
-            Object[] args = invocation.getArguments();
+    @DisplayName("Behavior driven development")
+    public void testAdd() {
+        // Given
+        given(calcService.add(20.0, 10.0)).willReturn(30.0);
 
-            // get the mock
-            Object mock   = invocation.getMock();
+        // when
+        double result = calcService.add(20.0, 10.0);
 
-            return 30.0;
-        });
-
-        // test the add functionality
-        Assertions.assertEquals(mathApplication.add(20.0, 10.0), 30.0);
+        // then
+        Assertions.assertEquals(result, 30.0);
     }
 }
