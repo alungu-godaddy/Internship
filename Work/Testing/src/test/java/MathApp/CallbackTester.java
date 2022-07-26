@@ -19,7 +19,7 @@ public class CallbackTester {
     @BeforeAll
     public static void setUp() {
         mathApplication = new MathApplication();
-        calcService     = mock(CalculatorService.class);
+        calcService = mock(CalculatorService.class);
         mathApplication.setCalculatorService(calcService);
     }
 
@@ -32,7 +32,7 @@ public class CallbackTester {
             Object[] args = invocation.getArguments();
 
             // get the mock
-            Object mock   = invocation.getMock();
+            Object mock = invocation.getMock();
 
             return 30.0;
         });

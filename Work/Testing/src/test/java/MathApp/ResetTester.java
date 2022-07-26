@@ -19,7 +19,7 @@ public class ResetTester {
     @BeforeAll
     public static void setUp() {
         mathApplication = new MathApplication();
-        calcService     = mock(CalculatorService.class);
+        calcService = mock(CalculatorService.class);
         mathApplication.setCalculatorService(calcService);
     }
 
