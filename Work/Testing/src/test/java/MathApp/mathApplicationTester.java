@@ -10,7 +10,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class mathApplicationTester {
+public class MathApplicationTester {
 
     // @InjectMocks annotation is used to create and inject the mock object.
     @InjectMocks

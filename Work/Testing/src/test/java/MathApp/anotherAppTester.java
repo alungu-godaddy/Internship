@@ -10,14 +10,14 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class anotherAppTester {
+public class AnotherAppTester {
     private static MathApplication mathApplication;
     private static CalculatorService calcService;
 
     @BeforeAll
     public static void setUp() {
         mathApplication = new MathApplication();
-        calcService     = mock(CalculatorService.class);
+        calcService = mock(CalculatorService.class);
         mathApplication.setCalculatorService(calcService);
     }
 

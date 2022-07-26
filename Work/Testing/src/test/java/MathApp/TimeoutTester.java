@@ -18,7 +18,7 @@ public class TimeoutTester {
     @BeforeAll
     public static void setUp() {
         mathApplication = new MathApplication();
-        calcService     = mock(CalculatorService.class);
+        calcService = mock(CalculatorService.class);
         mathApplication.setCalculatorService(calcService);
     }
 
@@ -29,7 +29,7 @@ public class TimeoutTester {
 
         given(calcService.subtract(20.0, 10.0)).willReturn(10.0);
 
-        double addResult =  calcService.add(20.0, 10.0);
+        double addResult = calcService.add(20.0, 10.0);
 
         double subResult = calcService.subtract(20.0, 10.0);
 
