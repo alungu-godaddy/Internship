@@ -6,6 +6,12 @@
                 <property name="rootLoggerLevel" value="FINE" />
                 <property name="printedLoggerLevel" value="FINE" />
         </bean>
-        <bean id="myCoach" class="ioc.xml.roughexample.TrackCoach"></bean>
-        <bean id="myTennisCoach" class="ioc.xml.roughexample.TennisCoach"></bean>
+        <bean id="myFortune" class="ioc_di.xml.roughexample.HappyFortuneService"></bean>
+        <bean id="myCoach" class="ioc_di.xml.roughexample.TrackCoach">
+                <!-- constructor injection -->
+                <constructor-arg ref="myFortune"></constructor-arg>
+        </bean>
+        <bean id="myTennisCoach" class="ioc_di.xml.roughexample.TennisCoach">
+                <constructor-arg ref="myFortune"></constructor-arg>
+        </bean>
 </beans>
