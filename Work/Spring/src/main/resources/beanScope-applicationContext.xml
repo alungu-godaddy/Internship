@@ -8,22 +8,14 @@
                 <property name="printedLoggerLevel" value="FINE" />
         </bean>
 
-        <context:property-placeholder location="sport.properties"></context:property-placeholder>
-
         <bean id="myFortune" class="ioc_di.xml.roughexample.HappyFortuneService"></bean>
 
-        <bean id="myCoach" class="ioc_di.xml.roughexample.TrackCoach">
+        <bean id="myCoach" class="ioc_di.xml.roughexample.TrackCoach" scope="prototype">
                 <!-- constructor injection -->
                 <constructor-arg ref="myFortune"></constructor-arg>
         </bean>
 
         <bean id="myTennisCoach" class="ioc_di.xml.roughexample.TennisCoach">
                 <constructor-arg ref="myFortune"></constructor-arg>
-        </bean>
-
-        <bean id="myCricketCoach" class="ioc_di.xml.roughexample.CricketCoach">
-                <property name="fortuneService" ref="myFortune"></property>
-                <property name="emailAddress" value="${email}"></property>
-                <property name="team" value="${team}"></property>
         </bean>
 </beans>
