@@ -6,7 +6,7 @@ public class HelloSpringApp {
     public static void main(String[] args) {
         // load the spring config file
         ClassPathXmlApplicationContext context =
-                new ClassPathXmlApplicationContext("applicationContext.xml");
+                new ClassPathXmlApplicationContext("xml/applicationContext.xml");
         // retrieve bean from container
         Coach coach = context.getBean("myCoach", Coach.class);
         // call methods on the bean

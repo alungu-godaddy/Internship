@@ -6,7 +6,7 @@ public class BeanScopeDemoApp {
     public static void main(String[] args) {
         // load spring config file
         ClassPathXmlApplicationContext context =
-                new ClassPathXmlApplicationContext("beanScope-applicationContext.xml");
+                new ClassPathXmlApplicationContext("xml/beanScope-applicationContext.xml");
         // retrieve beans from container
         Coach theCoach = context.getBean("myCoach", Coach.class);
 
