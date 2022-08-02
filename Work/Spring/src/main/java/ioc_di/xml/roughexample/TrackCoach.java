@@ -14,4 +14,14 @@ public class TrackCoach implements Coach {
     public String getDailyFortune() {
         return fortuneService.getFortune();
     }
+
+    // init hook
+    public void doMyStartupStuff() {
+        System.out.println("TrackCoach: inside init method");
+    }
+
+    // destroy hook
+    public void doMyCleanupStuff() {
+        System.out.println("TrackCoach: inside destroy method");
+    }
 }
