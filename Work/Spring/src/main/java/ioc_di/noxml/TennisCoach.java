@@ -1,5 +1,7 @@
-package ioc_di.annotations;
+package ioc_di.noxml;
 
+import ioc_di.annotations.Coach;
+import ioc_di.annotations.FortuneService;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
