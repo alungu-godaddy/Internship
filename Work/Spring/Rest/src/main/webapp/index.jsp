@@ -5,5 +5,7 @@
 </head>
 <body>
     Spring REST Demo
+
+    <a href="${pageContext.request.contextPath}/api/students">Get Students</a>
 </body>
 </html>
