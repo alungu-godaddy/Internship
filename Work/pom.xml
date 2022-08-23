@@ -14,6 +14,8 @@
         <module>Collections</module>
         <module>Spring</module>
         <module>Bonus</module>
+        <module>OpenFeign</module>
+        <module>Function</module>
     </modules>
 
     <dependencies>
